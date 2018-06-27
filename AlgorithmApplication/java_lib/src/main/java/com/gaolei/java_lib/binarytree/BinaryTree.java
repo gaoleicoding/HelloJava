@@ -1,4 +1,4 @@
-package com.gaolei.algorithmapplication.binarytree;
+package com.gaolei.java_lib.binarytree;
 
 /**
  * Created by gaolei on 2017/12/31.
