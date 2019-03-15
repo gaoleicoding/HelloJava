@@ -1,4 +1,4 @@
-package com.gaolei.java_lib.arraymovefromk;
+package com.gaolei.java_lib.array_move_fromk;
 
 import java.util.Arrays;
 
@@ -24,7 +24,7 @@ public class ArrayMove {
         a[i] = a[k];
         a[k] = temp;
     }
-
+    //设数组大小为n,先保存a[n-k+i],然后将不用移动的n-k个元素后移：
     public static void move1(int[] a, int n, int k) {
 
         for (int i = 0; i < k; i++) {
@@ -35,12 +35,14 @@ public class ArrayMove {
                 a[n - k + i - j] = a[n - k + i - j - 1];
                 System.out.println("n - k + i - j:" + (n - k + i - j));
             }
+
             a[i] = t;
         }
+
     }
 
     public static void main(String[] args) {
-        int[] array = {1, 2, 3, 4, 5};
+        int[] array = {1, 2, 3, 4, 5,6};
 //        trans(array,9,3);
         move1(array, array.length, 2);
         System.out.print(Arrays.toString(array));
