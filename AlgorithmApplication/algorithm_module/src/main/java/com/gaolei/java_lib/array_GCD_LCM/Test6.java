@@ -53,7 +53,7 @@ class MaxDivisorMinMultiple
 	}
 	public int getMinMultiple()
 	{
-		int i = 1;
+		int i =1;
 		while(true)
 		{
 			//n最小的倍数可以把m整除

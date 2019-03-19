@@ -2,7 +2,7 @@ package com.gaolei.java_lib.linkedlist_num_add;
 
 
 
-public class LinkedListAdd {
+public class LinkedListSum {
 
 
     public static void main(String[] args) {
@@ -31,21 +31,6 @@ public class LinkedListAdd {
        printList(head);
         return head;
 
-//        //带有头结点
-//        Node head = Node(0);
-//        Node tmp = null;  // 保存临时变量
-//        Node cur = null;  // 始终指向末尾节点
-//        //构造一个长度为10的链表，保存头节点对象head
-//        //利用尾插入法
-//        for (int i = 1; i < 10; i++) {
-//            tmp = new Node(i);
-//            if (1 == i) {
-//                head.setNextNode(tmp);
-//            } else {
-//                cur.setNextNode(tmp);
-//            }
-//            cur = tmp;
-//        }
     }
     public static Node makeList2(){
         //带有头结点
