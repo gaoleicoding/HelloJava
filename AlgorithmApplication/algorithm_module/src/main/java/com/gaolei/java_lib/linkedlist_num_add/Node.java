@@ -1,4 +1,4 @@
-package com.gaolei.java_lib.LinkedListAdd;
+package com.gaolei.java_lib.linkedlist_num_add;
 
 // 定义一个单链表
 class Node {

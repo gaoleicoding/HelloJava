@@ -5,7 +5,7 @@ import java.util.regex.Pattern;
 public class String2Int {
     public static void main(String[] args) {
 
-        String abc = "a765003000";
+        String abc = "765b00a3000";
 
         stringToInt(abc);
     }
@@ -32,7 +32,7 @@ public class String2Int {
     }
 
     public static boolean isInteger(String str) {
-        Pattern pattern = Pattern.compile("[0-9]*");
+        Pattern pattern = Pattern.compile("[0-9]");
         return pattern.matcher(str).matches();
     }
 }

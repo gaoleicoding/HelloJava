@@ -1,4 +1,4 @@
-package com.gaolei.java_lib.search;
+package com.gaolei.java_lib.array_search;
 
 public class Search {
 
