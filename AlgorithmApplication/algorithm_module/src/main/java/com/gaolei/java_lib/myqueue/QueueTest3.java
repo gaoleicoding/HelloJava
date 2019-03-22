@@ -106,7 +106,8 @@ public class QueueTest3 {
             return size;
         }
     }
-    //使用ArrayQueue定义一个队列
+    //ArrayDeque是java中对双端队列的线性实现，当用作栈时，
+    // 性能优于Stack，当用于队列时，性能优于LinkedList，不能存储null
     static class ArrayDequeQueue<E> {
         private Deque<E> container=new ArrayDeque<E>();
         //容量

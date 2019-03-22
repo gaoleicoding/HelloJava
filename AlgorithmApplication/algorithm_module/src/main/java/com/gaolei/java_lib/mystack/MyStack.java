@@ -4,6 +4,9 @@ import java.util.ArrayDeque;
 import java.util.Deque;
 
 public class MyStack<E> {
+
+	//ArrayDeque是java中对双端队列的线性实现，当用作栈时，
+	// 性能优于Stack，当用于队列时，性能优于LinkedList，不能存储null
 	//容器
 	private Deque<E> container=new ArrayDeque<E>();
 	//容量
@@ -14,7 +17,7 @@ public class MyStack<E> {
 		this.cap=cap;
 	}
 	
-	//压站
+	//压栈
 	public boolean push(E e){
 		if(this.container.size()+1>this.cap){
 			return false;
@@ -23,12 +26,12 @@ public class MyStack<E> {
 		
 	}
 	
-	//弹站
+	//弹栈
 	public E pop(){
 		return this.container.pollLast();
 	}
 	
-	//出战
+	//出栈
 	public E peak(){
 		return this.container.peekLast();
 	}
