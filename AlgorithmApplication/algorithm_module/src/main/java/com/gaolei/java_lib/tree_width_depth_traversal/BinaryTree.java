@@ -1,4 +1,4 @@
-package com.gaolei.java_lib.three_width_depth_traversal;
+package com.gaolei.java_lib.tree_width_depth_traversal;
 
 import java.util.ArrayDeque;
 
