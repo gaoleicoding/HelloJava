@@ -51,16 +51,17 @@ public class BinaryTree {
         ArrayDeque<TreeNode> stack=new ArrayDeque<TreeNode>();
         stack.push(root);         
         while(stack.isEmpty()==false){  
-            TreeNode node=stack.pop();  
+            TreeNode node=stack.remove();
             System.out.print(node.value+"    ");  
             if(node.right!=null){  
                 stack.push(node.right);  
             }  
             if(node.left!=null){  
                 stack.push(node.left);  
-            }             
+            }
+            System.out.println("stack.size():"+stack.size());
         }  
-        System.out.print("\n");  
+        System.out.print("\n\n\n\n");
     }  
   
     /** 
@@ -76,14 +77,15 @@ public class BinaryTree {
         ArrayDeque<TreeNode> queue=new ArrayDeque<TreeNode>();  
         queue.push(root);
         while(queue.isEmpty()==false){  
-            TreeNode node=queue.pop();
-            System.out.print(node.value+"    ");  
+            TreeNode node=queue.remove();
+            System.out.print(node.value+"    ");
             if(node.left!=null){  
-                queue.add(node.left);  
+                queue.add(node.left);
             }  
             if(node.right!=null){  
-                queue.add(node.right);  
-            }  
+                queue.add(node.right);
+            }
+            System.out.println("queue.size():"+queue.size());
         }  
         System.out.print("\n");  
     }  
@@ -98,7 +100,7 @@ public class BinaryTree {
      *           22   4 28 32 
      */  
     public static void main(String[] args) {  
-        int[] arr={0,13,65,5,97,25,0,37,22,0,4,28,0,0,32,0};  
+        int[] arr={0,13,65,5,97,25,0,37,22,0,4,28,0,0,32,0};
         BinaryTree tree=new BinaryTree(arr);  
         tree.depthOrderTraversal();  
         tree.levelOrderTraversal();  

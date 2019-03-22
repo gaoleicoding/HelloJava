@@ -10,7 +10,7 @@ public class QueueTest3 {
     public static void main(String[] args) {
 
         System.out.println("3.两个堆栈实现一个队列：");
-        ArrayQueue2 queue = new ArrayQueue2(88);
+        ArrayDequeQueue queue = new ArrayDequeQueue(88);
         queue.push(1);
         queue.push(2);
         queue.push(3);
@@ -107,12 +107,12 @@ public class QueueTest3 {
         }
     }
     //使用ArrayQueue定义一个队列
-    static class ArrayQueue2<E> {
+    static class ArrayDequeQueue<E> {
         private Deque<E> container=new ArrayDeque<E>();
         //容量
         private int cap;
 
-        public ArrayQueue2(int cap){
+        public ArrayDequeQueue(int cap){
             super();
             this.cap=cap;
         }
