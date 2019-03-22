@@ -1,6 +1,8 @@
 package com.gaolei.java_lib.myqueue;
 
+import java.util.ArrayDeque;
 import java.util.ArrayList;
+import java.util.Deque;
 import java.util.List;
 import java.util.Stack;
 
@@ -8,7 +10,7 @@ public class QueueTest3 {
     public static void main(String[] args) {
 
         System.out.println("3.两个堆栈实现一个队列：");
-        ArrayQueue queue = new ArrayQueue();
+        ArrayQueue2 queue = new ArrayQueue2(88);
         queue.push(1);
         queue.push(2);
         queue.push(3);
@@ -18,7 +20,7 @@ public class QueueTest3 {
         System.out.println(queue.pop());
         System.out.println(queue.pop());
         queue.push(5);
-        System.out.println("size：" + queue.size);
+        System.out.println("size：" + queue.getSize());
 
     }
 
@@ -51,33 +53,33 @@ public class QueueTest3 {
         }
     }
 
-    //使用集合定义一个队列
+    //使用List方式定义一个队列
     class ListQueue {
 
         List<Integer> list = new ArrayList<Integer>();
-        int index = 0;  //下标
+        int size = 0;  //下标
 
         //入队
         public void push(int n) {
             list.add(n);
-            index++;
+            size++;
         }
 
         //出队
         public int pop() {
             if (!list.isEmpty()) {
-                index--;
+                size--;
                 return list.remove(0);
             }
             return -1;
         }
 
         public int getSize() {
-            return index;
+            return size;
         }
     }
 
-    //使用集合定义一个队列
+    //使用Array方式定义一个队列
     static class ArrayQueue {
         int capacity = 10;
         int array[] = new int[capacity];
@@ -102,6 +104,40 @@ public class QueueTest3 {
 
         public int getSize() {
             return size;
+        }
+    }
+    //使用ArrayQueue定义一个队列
+    static class ArrayQueue2<E> {
+        private Deque<E> container=new ArrayDeque<E>();
+        //容量
+        private int cap;
+
+        public ArrayQueue2(int cap){
+            super();
+            this.cap=cap;
+        }
+
+        //压站
+        public boolean push(E e){
+            if(this.container.size()+1>this.cap){
+                return false;
+            }
+            return this.container.offerLast(e);
+
+        }
+
+        //弹站
+        public E pop(){
+            return this.container.pollFirst();
+        }
+
+        //出战
+        public E peak(){
+            return this.container.peekLast();
+        }
+
+        public int getSize(){
+            return this.container.size();
         }
     }
 }
