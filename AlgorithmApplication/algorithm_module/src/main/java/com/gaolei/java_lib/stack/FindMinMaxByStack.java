@@ -1,4 +1,4 @@
-package com.gaolei.java_lib.mystack;
+package com.gaolei.java_lib.stack;
 
 import java.util.Stack;
 

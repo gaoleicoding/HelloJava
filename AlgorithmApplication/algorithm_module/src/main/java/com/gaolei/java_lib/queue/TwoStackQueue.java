@@ -1,4 +1,4 @@
-package com.gaolei.java_lib.myqueue;
+package com.gaolei.java_lib.queue;
 
 import java.util.Stack;
  

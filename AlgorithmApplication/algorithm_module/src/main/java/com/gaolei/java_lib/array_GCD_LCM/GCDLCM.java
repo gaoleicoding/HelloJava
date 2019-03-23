@@ -1,7 +1,6 @@
 package com.gaolei.java_lib.array_GCD_LCM;
 
-import java.util.*;
-public class Test6
+public class GCDLCM
 {
 	public static void main(String[] args)
 	{

@@ -1,10 +1,10 @@
-package com.gaolei.java_lib.binarytree;
+package com.gaolei.java_lib.tree_traversal;
 
 /**
  * Created by gaolei on 2017/12/31.
  */
 
-public class BinaryTree {
+public class BinaryTreeTraversal {
 
     private Node root;
 
@@ -24,7 +24,7 @@ public class BinaryTree {
         }
     }
 
-    public BinaryTree(){
+    public BinaryTreeTraversal(){
         root = null;
     }
 
@@ -91,7 +91,7 @@ public class BinaryTree {
 
     public static void main(String[] args) {
         int[] a = {2,4,12,45,21,6,111};
-        BinaryTree bTree = new BinaryTree();
+        BinaryTreeTraversal bTree = new BinaryTreeTraversal();
         for (int i = 0; i < a.length; i++) {
             bTree.buildTree(bTree.root, a[i]);
         }

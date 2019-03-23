@@ -1,4 +1,4 @@
-package com.gaolei.java_lib.multithread;
+package com.gaolei.java_lib.deadlock;
 
 public class DeadLock {
     public static String obj1 = "obj1";

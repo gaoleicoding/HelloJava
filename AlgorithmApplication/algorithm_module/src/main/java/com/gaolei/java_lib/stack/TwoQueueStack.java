@@ -1,7 +1,6 @@
-package com.gaolei.java_lib.mystack;
+package com.gaolei.java_lib.stack;
 
 import java.util.ArrayDeque;
-import java.util.Deque;
 import java.util.Queue;
 
 public class TwoQueueStack {

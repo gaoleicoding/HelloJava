@@ -1,8 +1,8 @@
-package com.gaolei.java_lib.tree_width_depth_traversal;
+package com.gaolei.java_lib.tree_traversal;
 
 import java.util.ArrayDeque;
 
-public class BinaryTree {
+public class TreeWidthDepthTraversal {
     static class TreeNode{  
         int value;  
         TreeNode left;  
@@ -15,7 +15,7 @@ public class BinaryTree {
       
     TreeNode root;  
       
-    public BinaryTree(int[] array){  
+    public TreeWidthDepthTraversal(int[] array){
         root=makeBinaryTreeByArray(array,1);  
     }  
   
@@ -101,7 +101,7 @@ public class BinaryTree {
      */  
     public static void main(String[] args) {  
         int[] arr={0,13,65,5,97,25,0,37,22,0,4,28,0,0,32,0};
-        BinaryTree tree=new BinaryTree(arr);  
+        TreeWidthDepthTraversal tree=new TreeWidthDepthTraversal(arr);
         tree.depthOrderTraversal();  
         tree.levelOrderTraversal();  
     }  

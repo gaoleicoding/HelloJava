@@ -1,6 +1,6 @@
 package com.gaolei.java_lib.fibonacci;
 
-public class Demo {
+public class FibonacciDemo {
     public static void main(String[] args) {
  
         int n = 20;

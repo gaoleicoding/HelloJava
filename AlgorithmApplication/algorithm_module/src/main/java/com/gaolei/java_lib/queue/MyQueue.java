@@ -1,4 +1,4 @@
-package com.gaolei.java_lib.myqueue;
+package com.gaolei.java_lib.queue;
 
 import java.util.ArrayDeque;
 import java.util.ArrayList;
@@ -6,7 +6,7 @@ import java.util.Deque;
 import java.util.List;
 import java.util.Stack;
 
-public class QueueTest3 {
+public class MyQueue {
     public static void main(String[] args) {
 
         System.out.println("3.两个堆栈实现一个队列：");
