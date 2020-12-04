@@ -1,10 +1,13 @@
 package com.gaolei.java_lib.find_kth_num;
 
+/**
+ * Description：找出一个单链表中倒数第K个节点
+ */
 public class FindKthNum {
     public static void main(String[] args) {
-        Node head=makeList1();
-        Node k=findK(head,1);
-        System.out.println("k---------------"+k.val);
+        Node head = makeList1();
+        Node k = findK(head, 1);
+        System.out.println("k---------------" + k.val);
     }
 
     public static Node findK(Node head, int k) {
@@ -26,19 +29,19 @@ public class FindKthNum {
         return p1;
     }
 
-    public static Node makeList1(){
+    public static Node makeList1() {
         //带有头结点
         Node head = new Node(1);
-        Node tmp ;  // 保存临时变量
+        Node tmp;  // 保存临时变量
         Node cur = null;  // 始终指向末尾节点
         //构造一个长度为10的链表，保存头节点对象head
         //利用尾插入法
         for (int i = 2; i < 10; i++) {
             tmp = new Node(i);
             if (2 == i) {
-                head.next=tmp;
+                head.next = tmp;
             } else {
-                cur.next=tmp;
+                cur.next = tmp;
             }
             cur = tmp;
         }

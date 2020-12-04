@@ -2,6 +2,9 @@ package com.gaolei.java_lib.string2int;
 
 import java.util.regex.Pattern;
 
+/**
+ * Description：字符串转整数
+ */
 public class String2Int {
     public static void main(String[] args) {
 

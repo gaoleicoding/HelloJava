@@ -26,21 +26,17 @@ public class FindMinMaxByStack<E extends Comparable<E>> {
     }
 
     public void push(E e) {
+
         stack1.push(e);
 
         if (stackMin.isEmpty() || e.compareTo(stackMin.peek()) < 0) {
-            stackMin.push(e);//若最小栈为空push进stack时就同时把它push进stackMin;
-//                System.out.println("stackMin，push:"+e);
+            //若最小栈为空push进stack时就同时把它push进stackMin;
+            stackMin.push(e);
         }
-//            else if(e.compareTo(stackMin.peek())>0)
-//                stackMin.push(stackMin.peek());
 
         if (stackMax.isEmpty() || e.compareTo(stackMax.peek()) > 0) {
-//                System.out.println("stackMax，push:"+e);
             stackMax.push(e);
         }
-//            else if(e.compareTo(stackMax.peek())<0)
-//                stackMin.push(stackMax.peek());
     }
 
     public E pop()//一定要记着，非空才能pop()
@@ -68,7 +64,7 @@ public class FindMinMaxByStack<E extends Comparable<E>> {
     public E getMax() {
         E result = null;
         if (!stackMax.isEmpty()) result = stackMax.peek();
-        return stackMax.peek();
+        return result;
     }
 //        public E getMed()
 //        {

@@ -2,12 +2,12 @@ package com.gaolei.java_lib.array_move_from_k;
 
 import java.util.Arrays;
 
-
 /**
- * Created by gaolei on 2018/6/27.
+ * Description：将一个长度为n的数组A的元素循环右移k位 比如数组 1, 2, 3, 4, 5 循环右移3位之后变成 3, 4, 5, 1, 2
  */
 
 public class ArrayMove {
+
     private static void trans(int[] a, int n, int k) {
         for (int i = n - 1; i >= k; i--) {
             swap(a, i, i - k);
@@ -24,27 +24,53 @@ public class ArrayMove {
         a[i] = a[k];
         a[k] = temp;
     }
-    //设数组大小为n,先保存a[n-k+i],然后将不用移动的n-k个元素后移：
-    public static void move1(int[] a, int n, int k) {
 
-        for (int i = 0; i < k; i++) {
-            int t = a[n - k + i];
-            System.out.println("t:" + t);
-            for (int j = 0; j < n - k; j++) {
-                System.out.println("j:" + j);
-                a[n - k + i - j] = a[n - k + i - j - 1];
-                System.out.println("n - k + i - j:" + (n - k + i - j));
+    /*
+     *方法一：
+     *首先考虑k。如果k能被数组长度len整除，那么数组顺序不变，可以直接输出数组。如果不能整除，得到k=k%len。
+     *将数组右移k次，每次都把数组最后一位保存，然后从下标为len-2到0的数都往右移动一位，最后把原来最后一位放到数组开头。
+     */
+    public static void CircleRightK(int[] A, int k) {
+        int len = A.length;
+        k = k % len;
+        if (k == 0) return;
+        while (k > 0) {
+            int temp = A[len - 1];   //每次保存最后一位
+            for (int i = len - 1; i > 0; i--) {
+                A[i] = A[i - 1];
             }
-
-            a[i] = t;
+            A[0] = temp;
+            k--;
         }
+    }
+
+    /*
+     *方法二
+     *考虑将数组逆序，然后把数组分为两部分，前半部分为前k个数，后半部分为剩下的数，再分别对他们进行逆序。
+     */
+    public static void CircleRightK2(int[] A, int k) {
+        int len = A.length;
+        k = k % len;
+        if (k == 0) return;
+        reverse(A, 0, len - 1);  //逆置数组
+        reverse(A, 0, k - 1);
+        reverse(A, k, len - 1);
 
     }
 
+    public static void reverse(int[] A, int i, int j) {
+        while (i < j) {
+            int temp = A[i];
+            A[i] = A[j];
+            A[j] = temp;
+            i++;
+            j--;
+        }
+    }
+
     public static void main(String[] args) {
-        int[] array = {1, 2, 3, 4, 5,6};
-//        trans(array,9,3);
-        move1(array, array.length, 2);
+        int[] array = {1, 2, 3, 4, 5};
+        CircleRightK2(array, 2);
         System.out.print(Arrays.toString(array));
     }
 

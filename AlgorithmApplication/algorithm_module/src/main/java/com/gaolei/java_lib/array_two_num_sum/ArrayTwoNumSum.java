@@ -1,11 +1,14 @@
-package com.gaolei.java_lib.array_tow_num_sum;
+package com.gaolei.java_lib.array_two_num_sum;
 
 import java.util.Arrays;
 
+/**
+ * Description：求数组中是否存在两个数的和等于某个值
+ */
 public class ArrayTwoNumSum {
     public static void main(String[] args) {
 
-        int array[] = {3, 0,6, 1, 8, 2};
+        int array[] = {3, 0, 6, 1, 8, 2};
         System.out.println("排序前：" + Arrays.toString(array));
         quick(array);
         System.out.println("排序后：" + Arrays.toString(array));

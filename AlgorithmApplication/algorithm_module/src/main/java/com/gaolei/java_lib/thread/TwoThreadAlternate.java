@@ -1,6 +1,9 @@
-package com.gaolei.java_lib.deadlock;
+package com.gaolei.java_lib.thread;
 
-public class Work2 {
+/**
+ * Description：两个线程，交替执行
+ */
+public class TwoThreadAlternate {
     static final Object object = new Object();
 
     public static void main(String[] args) {

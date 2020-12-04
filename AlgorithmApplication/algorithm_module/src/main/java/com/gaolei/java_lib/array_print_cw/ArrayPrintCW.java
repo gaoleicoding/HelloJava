@@ -2,21 +2,15 @@ package com.gaolei.java_lib.array_print_cw;
 
 public class ArrayPrintCW {
     /**
-     * Description:二维数组（N*N），沿对角线方向，从右上角打印到左下角
-     *
-     * @param args
-     * @author liuwei  DateTime 2014-5-27 下午4:13:56
+     * Description：二维数组（N*N），顺时针从外向里打印数组
      */
     public static void main(String[] args) {
 
-
-//        int[][] a = {{1,2,3,4},
-//                {5,6,7,8},
-//                {9,10,11,12},
-//                {13,14,15,16}};
-        int[][] a = {{1, 2, 3},
+        int[][] a = {
+                {1, 2, 3},
                 {4, 5, 6},
-                {7, 8, 9}};
+                {7, 8, 9}
+        };
         printMatrixInCircle(a);
     }
 

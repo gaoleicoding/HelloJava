@@ -1,7 +1,7 @@
 package com.gaolei.java_lib.find_kth_num;
 
 // 定义一个单链表
-class Node {
+public class Node {
 
     public Node(int val) {
         this.val = val;

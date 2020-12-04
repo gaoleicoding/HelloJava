@@ -3,7 +3,10 @@ package com.gaolei.java_lib.find_overhalf_num;
 import java.util.HashMap;
 import java.util.Map;
 
-public class FindNum {
+/**
+ * Description：找出出现次数超过一半的数
+ */
+public class FindOverhalfNum {
 
 
     public static void main(String[] args) {
@@ -36,18 +39,19 @@ public class FindNum {
 
         return findNum;
     }
-    public static int findAppearMoreThanHalf(int [] arr){
-        int num=0;//存储出现次数超过一半的数
-        Map<Integer,Integer> map = new HashMap<>();
-        for(int i:arr){
-            if(!map.containsKey(i)){//不包含该数，第一次出现
-                map.put(i,1);
-            }else {
-                int n=map.get(i);
+
+    public static int findAppearMoreThanHalf(int[] arr) {
+        int num = 0;//存储出现次数超过一半的数
+        Map<Integer, Integer> map = new HashMap<>();
+        for (int i : arr) {
+            if (!map.containsKey(i)) {//不包含该数，第一次出现
+                map.put(i, 1);
+            } else {
+                int n = map.get(i);
                 n++;//出现过了的就取出+1，再放回去
-                map.put(i,n);
-                if(n>(arr.length/2)){//出现次数超过一半的话
-                    num=i;
+                map.put(i, n);
+                if (n > (arr.length / 2)) {//出现次数超过一半的话
+                    num = i;
                 }
             }
         }

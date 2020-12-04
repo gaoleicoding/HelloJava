@@ -6,7 +6,10 @@ import java.util.Deque;
 import java.util.List;
 import java.util.Stack;
 
-public class MyQueue {
+/**
+ * Description：自定义实现queue
+ */
+public class CustomQueue {
     public static void main(String[] args) {
 
         System.out.println("3.两个堆栈实现一个队列：");
@@ -27,8 +30,8 @@ public class MyQueue {
     //两个堆栈实现一个队列
     static class StackQueue {
 
-        Stack<Integer> stackA = new Stack<Integer>();
-        Stack<Integer> stackB = new Stack<Integer>();
+        Stack<Integer> stackA = new Stack<>();
+        Stack<Integer> stackB = new Stack<>();
         int size = 0;
 
         //入队
@@ -83,18 +86,18 @@ public class MyQueue {
     static class ArrayQueue {
         int capacity = 10;
         int array[] = new int[capacity];
-        int size = 0,head=0,tail=0;  //下标
+        int size = 0, head = 0, tail = 0;  //下标
 
         //入队
         public void push(int n) {
-            array[tail++]=n;
+            array[tail++] = n;
             size++;
         }
 
         //出队
         public int pop() {
-            if (size>0) {
-                int value= array[head];
+            if (size > 0) {
+                int value = array[head];
                 size--;
                 head++;
                 return value;
@@ -106,21 +109,22 @@ public class MyQueue {
             return size;
         }
     }
+
     //ArrayDeque是java中对双端队列的线性实现，当用作栈时，
     // 性能优于Stack，当用于队列时，性能优于LinkedList，不能存储null
     static class ArrayDequeQueue<E> {
-        private Deque<E> container=new ArrayDeque<E>();
+        private Deque<E> container = new ArrayDeque<E>();
         //容量
         private int cap;
 
-        public ArrayDequeQueue(int cap){
+        public ArrayDequeQueue(int cap) {
             super();
-            this.cap=cap;
+            this.cap = cap;
         }
 
         //压站
-        public boolean push(E e){
-            if(this.container.size()+1>this.cap){
+        public boolean push(E e) {
+            if (this.container.size() + 1 > this.cap) {
                 return false;
             }
             return this.container.offerLast(e);
@@ -128,16 +132,16 @@ public class MyQueue {
         }
 
         //弹站
-        public E pop(){
+        public E pop() {
             return this.container.pollFirst();
         }
 
         //出战
-        public E peak(){
+        public E peak() {
             return this.container.peekLast();
         }
 
-        public int getSize(){
+        public int getSize() {
             return this.container.size();
         }
     }
