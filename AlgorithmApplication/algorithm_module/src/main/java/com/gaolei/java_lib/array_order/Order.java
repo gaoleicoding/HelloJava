@@ -61,7 +61,8 @@ public class Order {
     //二、快速排序
     public static void quickSort(Integer[] a2) {
         long currentTime = System.currentTimeMillis();
-        if (a2.length > 0) {    //查看数组是否为空
+        if (a2.length > 0) {
+            //查看数组是否为空
             _quick(a2, 0, a2.length - 1);
         }
         long nowTime = System.currentTimeMillis();

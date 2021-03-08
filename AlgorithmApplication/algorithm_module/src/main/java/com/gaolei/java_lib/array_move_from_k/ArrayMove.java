@@ -12,8 +12,8 @@ public class ArrayMove {
         for (int i = n - 1; i >= k; i--) {
             swap(a, i, i - k);
         }
-        if ((n - k) % k == 0)
-            return;
+        if ((n - k) % k == 0) {
+        }
         else
             trans(a, k, k - (n - k) % k);
     }

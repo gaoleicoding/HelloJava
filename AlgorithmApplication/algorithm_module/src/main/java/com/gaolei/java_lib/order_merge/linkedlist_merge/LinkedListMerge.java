@@ -1,6 +1,6 @@
 package com.gaolei.java_lib.order_merge.linkedlist_merge;
 
-import com.gaolei.java_lib.linkedlist.Node;
+import com.gaolei.java_lib.linkedlist.LinkedNode;
 
 /**
  * Description：两个有序数组合并为一个有序数组
@@ -13,7 +13,7 @@ public class LinkedListMerge {
 
 
     //将两个有序链表合并为一个新的有序链表（升序为例）
-    public static Node conflateList(Node head1, Node head2) {
+    public static LinkedNode conflateList(LinkedNode head1, LinkedNode head2) {
         //先进行判空
         if (head1 == null) {
             return head2;
@@ -22,11 +22,11 @@ public class LinkedListMerge {
             return head1;
         }
         //设置两个引用分别指向两个链表
-        Node cur1 = head1;
-        Node cur2 = head2;
+        LinkedNode cur1 = head1;
+        LinkedNode cur2 = head2;
         //设置将要合成的链表的头和尾
-        Node newHead = null;
-        Node newTail = null;
+        LinkedNode newHead = null;
+        LinkedNode newTail = null;
         //两个链表任何一个为空循环就终止
         while (cur1 != null && cur2 != null) {
             if (cur1.val <= cur2.val) {
@@ -61,10 +61,10 @@ public class LinkedListMerge {
     }
 
     public static void main(String[] args) {
-        Node head1 = null, tail1 = null;
-        Node head2 = null, tail2 = null;
+        LinkedNode head1 = null, tail1 = null;
+        LinkedNode head2 = null, tail2 = null;
         for (int i = 1; i <= 10; i++) {
-            Node node = new Node(i);
+            LinkedNode node = new LinkedNode(i);
             if (head1 == null) {
                 tail1 = node;
                 head1 = tail1;
@@ -74,7 +74,7 @@ public class LinkedListMerge {
             }
         }
         for (int i = 8; i <= 13; i++) {
-            Node node = new Node(i);
+            LinkedNode node = new LinkedNode(i);
             if (head2 == null) {
                 head2 = node;
                 tail2 = node;
@@ -84,9 +84,9 @@ public class LinkedListMerge {
             }
         }
 
-        Node node = conflateList(head1, head2);
+        LinkedNode node = conflateList(head1, head2);
         System.out.print(node.val + "、");
-        Node tempNode = node;
+        LinkedNode tempNode = node;
         while (tempNode.next != null) {
             tempNode = tempNode.next;
             System.out.print(tempNode.val + "、");

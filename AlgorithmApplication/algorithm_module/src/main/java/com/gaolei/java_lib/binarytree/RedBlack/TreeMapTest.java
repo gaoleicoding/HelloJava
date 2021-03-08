@@ -1,4 +1,4 @@
-package com.gaolei.java_lib.tree.RedBlack;
+package com.gaolei.java_lib.binarytree.RedBlack;
 
 import java.util.TreeMap;
 

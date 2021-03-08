@@ -1,11 +1,13 @@
-package com.gaolei.java_lib.array_two_num_sum;
+package com.gaolei.java_lib.array_sum_equals;
 
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Description：求数组中是否存在两个数的和等于某个值
  */
-public class ArrayTwoNumSum {
+public class SumEqualsNum {
     public static void main(String[] args) {
 
         int array[] = {3, 0, 6, 1, 8, 2};
@@ -14,6 +16,30 @@ public class ArrayTwoNumSum {
         System.out.println("排序后：" + Arrays.toString(array));
         boolean isExit = getSumNum(array, 1);
         System.out.println("isExit：" + isExit);
+    }
+
+    // 找到这两个数的下标并返回(以长度为2的数组的形式返回)
+    private static int[] getIndex(int[] arr, int num) {
+        int[] ret = new int[2];
+        HashMap<Integer, Integer> hashMap = new HashMap<>();
+        int index = 0;
+
+        // 将每个数字和其下标放进map中
+        for (Integer curr : arr) {
+            hashMap.put(curr, index++);
+        }
+        // 遍历HashMap并判断
+        for (Map.Entry<Integer, Integer> entry : hashMap.entrySet()) {
+            int key = entry.getKey();
+            int subValue = num - key;
+            if (hashMap.containsKey(subValue)) {
+                // 找到啦!
+                ret[0] = entry.getValue();
+                ret[1] = hashMap.get(subValue);
+                break;
+            }
+        }
+        return ret;
     }
 
     //时间复杂度o(n)
@@ -39,7 +65,6 @@ public class ArrayTwoNumSum {
         int tmp = array[low];    //数组的第一个作为中轴
         while (low < high) {
             while (low < high && array[high] >= tmp) {
-
                 high--;
             }
             array[low] = array[high];   //比中轴小的记录移到低端

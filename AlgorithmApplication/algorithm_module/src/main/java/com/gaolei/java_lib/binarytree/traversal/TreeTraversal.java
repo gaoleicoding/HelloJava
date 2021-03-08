@@ -1,4 +1,6 @@
-package com.gaolei.java_lib.tree.traversal;
+package com.gaolei.java_lib.binarytree.traversal;
+
+import com.gaolei.java_lib.binarytree.BinaryTreeNode;
 
 /**
  * Description：二叉树遍历原则：前序根左右，中序左根右，后序左右根
@@ -6,24 +8,14 @@ package com.gaolei.java_lib.tree.traversal;
 
 public class TreeTraversal {
 
-    private Node root;
+    private BinaryTreeNode root;
 
     /**
      * 内部节点类
      *
      * @author yhh
      */
-    private class Node {
-        private Node left;
-        private Node right;
-        private int data;
 
-        public Node(int data) {
-            this.left = null;
-            this.right = null;
-            this.data = data;
-        }
-    }
 
     public TreeTraversal() {
         root = null;
@@ -35,19 +27,19 @@ public class TreeTraversal {
      * @param node
      * @param data
      */
-    public void buildTree(Node node, int data) {
+    public void buildTree(BinaryTreeNode node, int data) {
         if (root == null) {
-            root = new Node(data);
+            root = new BinaryTreeNode(data);
         } else {
-            if (data < node.data) {
+            if (data < node.val) {
                 if (node.left == null) {
-                    node.left = new Node(data);
+                    node.left = new BinaryTreeNode(data);
                 } else {
                     buildTree(node.left, data);
                 }
             } else {
                 if (node.right == null) {
-                    node.right = new Node(data);
+                    node.right = new BinaryTreeNode(data);
                 } else {
                     buildTree(node.right, data);
                 }
@@ -60,9 +52,9 @@ public class TreeTraversal {
      *
      * @param node
      */
-    public void preOrder(Node node) {
+    public void preOrder(BinaryTreeNode node) {
         if (node != null) {
-            System.out.println(node.data);
+            System.out.println(node.val);
             preOrder(node.left);
             preOrder(node.right);
         }
@@ -73,11 +65,11 @@ public class TreeTraversal {
      *
      * @param node
      */
-    public void inOrder(Node node) {
+    public void inOrder(BinaryTreeNode node) {
 
         if (node != null) {
             inOrder(node.left);
-            System.out.println(node.data);
+            System.out.println(node.val);
             inOrder(node.right);
         }
     }
@@ -87,11 +79,11 @@ public class TreeTraversal {
      *
      * @param node
      */
-    public void postOrder(Node node) {
+    public void postOrder(BinaryTreeNode node) {
         if (node != null) {
             postOrder(node.left);
             postOrder(node.right);
-            System.out.println(node.data);
+            System.out.println(node.val);
         }
     }
 

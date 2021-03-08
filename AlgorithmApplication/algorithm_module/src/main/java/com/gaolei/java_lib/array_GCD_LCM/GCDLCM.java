@@ -26,11 +26,8 @@ class MaxDivisorMinMultiple {
 
     //构造函数
     public MaxDivisorMinMultiple(int m, int n) {
-        if (m > n)//输入的两个数中, 大数赋值给m, 小数赋值给n,
+        if (m < n)//输入的两个数中, 大数赋值给m, 小数赋值给n,
         {
-            this.m = m;
-            this.n = n;
-        } else {
             this.m = n;
             this.n = m;
         }

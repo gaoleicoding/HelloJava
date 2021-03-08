@@ -1,6 +1,7 @@
 package com.gaolei.java_lib.linkedlist.num_add;
 
-import com.gaolei.java_lib.linkedlist.Node;
+
+import com.gaolei.java_lib.linkedlist.LinkedNode;
 
 /**
  * Description：两个链表的数子相加
@@ -10,9 +11,9 @@ public class LinkedListNumAdd {
 
     public static void main(String[] args) {
 
-        Node header = addTwoList(makeList(1, 2, 10), makeList(2, 3, 7));
+        LinkedNode header = addTwoList(makeList(1, 2, 10), makeList(2, 3, 7));
         StringBuilder builder = new StringBuilder();
-        Node tmp = header;
+        LinkedNode tmp = header;
         while (tmp != null) {
             builder.append(tmp.val);
             tmp = tmp.next;
@@ -20,15 +21,15 @@ public class LinkedListNumAdd {
         System.out.println(builder.toString());
     }
 
-    public static Node makeList(int head, int start, int end) {
+    public static LinkedNode makeList(int head, int start, int end) {
         //带有头结点
-        Node header = new Node(head);
-        Node tmp;  // 保存临时变量
-        Node cur = null;  // 始终指向末尾节点
+        LinkedNode header = new LinkedNode(head);
+        LinkedNode tmp;  // 保存临时变量
+        LinkedNode cur = null;  // 始终指向末尾节点
         //构造一个长度为10的链表，保存头节点对象head
         //利用尾插入法
         for (int i = start; i < end; i++) {
-            tmp = new Node(i);
+            tmp = new LinkedNode(i);
             if (2 == i) {
                 header.next = tmp;
             } else {
@@ -41,10 +42,10 @@ public class LinkedListNumAdd {
     }
 
 
-    public static Node addTwoList(Node l1, Node l2) {
+    public static LinkedNode addTwoList(LinkedNode l1, LinkedNode l2) {
 
-        Node header = new Node(0);
-        Node p = l1, q = l2, tmp = header;
+        LinkedNode header = new LinkedNode(0);
+        LinkedNode p = l1, q = l2, tmp = header;
         int curry = 0;
 
         while (p != null || q != null) {
@@ -52,7 +53,7 @@ public class LinkedListNumAdd {
             int y = q != null ? q.val : 0;
             int sum = x + y + curry;
             curry = sum / 10;
-            tmp.next = new Node(sum % 10);
+            tmp.next = new LinkedNode(sum % 10);
             tmp = tmp.next;
 
             if (p != null)
@@ -63,7 +64,7 @@ public class LinkedListNumAdd {
         }
 
         if (curry > 0) {
-            tmp.next = new Node(curry);
+            tmp.next = new LinkedNode(curry);
         }
         return header.next;
     }

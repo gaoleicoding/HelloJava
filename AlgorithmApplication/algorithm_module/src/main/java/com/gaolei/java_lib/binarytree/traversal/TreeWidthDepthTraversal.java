@@ -1,23 +1,18 @@
-package com.gaolei.java_lib.tree.traversal;
+package com.gaolei.java_lib.binarytree.traversal;
+
+import com.gaolei.java_lib.binarytree.BinaryTreeNode;
 
 import java.util.ArrayDeque;
+
+import javax.swing.tree.TreeNode;
 
 /**
  * Description：二叉树广度和深度遍历
  * Java 栈(Stack)和队列(Queue)的首选 - ArrayDeque：https://blog.csdn.net/m0_46144826/article/details/105405172
  */
 public class TreeWidthDepthTraversal {
-    static class TreeNode {
-        int value;
-        TreeNode left;
-        TreeNode right;
 
-        public TreeNode(int value) {
-            this.value = value;
-        }
-    }
-
-    TreeNode root;
+    BinaryTreeNode root;
 
     public TreeWidthDepthTraversal(int[] array) {
         root = makeBinaryTreeByArray(array, 1);
@@ -28,11 +23,11 @@ public class TreeWidthDepthTraversal {
      * 传入的是二叉树的数组表示法
      * 构造后是二叉树的二叉链表表示法
      */
-    public static TreeNode makeBinaryTreeByArray(int[] array, int index) {
+    public static BinaryTreeNode makeBinaryTreeByArray(int[] array, int index) {
         if (index < array.length) {
             int value = array[index];
             if (value != 0) {
-                TreeNode t = new TreeNode(value);
+                BinaryTreeNode t = new BinaryTreeNode(value);
                 array[index] = 0;
                 t.left = makeBinaryTreeByArray(array, index * 2);
                 t.right = makeBinaryTreeByArray(array, index * 2 + 1);
@@ -52,11 +47,11 @@ public class TreeWidthDepthTraversal {
             System.out.println("empty tree");
             return;
         }
-        ArrayDeque<TreeNode> stack = new ArrayDeque<>();
+        ArrayDeque<BinaryTreeNode> stack = new ArrayDeque<>();
         stack.push(root);
         while (!stack.isEmpty()) {
-            TreeNode node = stack.poll();
-            System.out.print(node.value + "    ");
+            BinaryTreeNode node = stack.poll();
+            System.out.print(node.val + "    ");
             if (node.right != null) {
                 stack.push(node.right);
             }
@@ -78,11 +73,11 @@ public class TreeWidthDepthTraversal {
             System.out.println("empty tree");
             return;
         }
-        ArrayDeque<TreeNode> queue = new ArrayDeque<>();
+        ArrayDeque<BinaryTreeNode> queue = new ArrayDeque<>();
         queue.offer(root);
         while (!queue.isEmpty()) {
-            TreeNode node = queue.poll();
-            System.out.print(node.value + "    ");
+            BinaryTreeNode node = queue.poll();
+            System.out.print(node.val + "    ");
             if (node.left != null) {
                 queue.offer(node.left);
             }
@@ -92,6 +87,47 @@ public class TreeWidthDepthTraversal {
             System.out.println("queue.size():" + queue.size());
         }
         System.out.print("\n");
+    }
+
+    // 求二叉树的最小深度
+    public static int minDepth(BinaryTreeNode root) {
+        //当前root为空则返回0
+        if (root == null) {
+            return 0;
+        }
+        //左子树为空则返回右子树的最小深度
+        else if (root.left == null) {
+            return minDepth(root.right) + 1;
+        }
+        //右子树为空则返回左子树最小深度
+        else if (root.right == null) {
+            return minDepth(root.left) + 1;
+        }
+        //左右子树均不为空则返回左右子树最小深度
+        else {
+            return Math.min(minDepth(root.left) + 1, minDepth(root.right) + 1);
+        }
+    }
+
+    // 求二叉树的高度
+    public static int deep(BinaryTreeNode node) {
+        int h1, h2;
+        if (node == null) {
+            return 0;
+        } else {
+            h1 = deep(node.left);
+            h2 = deep(node.right);
+            return (h1 < h2) ? h2 + 1 : h1 + 1;
+        }
+
+    }
+
+    // 求二叉树的节点数
+    public int getSize(BinaryTreeNode node) {
+        if (node == null) {
+            return 0;
+        }
+        return 1 + getSize(node.left) + getSize(node.right);
     }
 
     /**
@@ -106,7 +142,12 @@ public class TreeWidthDepthTraversal {
     public static void main(String[] args) {
         int[] arr = {0, 13, 65, 5, 97, 25, 0, 37, 22, 0, 4, 28, 0, 0, 32, 0};
         TreeWidthDepthTraversal tree = new TreeWidthDepthTraversal(arr);
-        tree.depthOrderTraversal();
-        tree.levelOrderTraversal();
+        int minDeep = minDepth(tree.root);
+        System.out.println("minDeep: " + minDeep);
+        int deep = deep(tree.root);
+        System.out.println("deep: " + deep);
+
+//        tree.depthOrderTraversal();
+//        tree.levelOrderTraversal();
     }
 } 

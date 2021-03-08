@@ -1,16 +1,16 @@
-package com.gaolei.java_lib.find_kth_num;
+package com.gaolei.java_lib.linkedlist;
 
 // 定义一个单链表
-public class Node {
+public class LinkedNode {
 
-    public Node(int val) {
+    public LinkedNode(int val) {
         this.val = val;
     }
 
     //变量
     public int val;
     //指向下一个对象  
-    public Node next;
+    public LinkedNode next;
 
     public int getVal() {
         return val;
@@ -20,11 +20,11 @@ public class Node {
         this.val = val;
     }
 
-    public Node getNext() {
+    public LinkedNode getNext() {
         return next;
     }
 
-    public void setNext(Node next) {
+    public void setNext(LinkedNode next) {
         this.next = next;
     }
 }

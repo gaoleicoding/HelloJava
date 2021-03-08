@@ -11,6 +11,13 @@ public class ArrayDiagonalPrint {
                 {1, 2, 3},
                 {4, 5, 6},
                 {7, 8, 9}};
+      /*  打印结果：
+        3
+        2 6
+        1 5 9
+        4 8
+        7
+        */
         int size = a.length;
         int len = 2 * a.length - 1;//一共生成几行结果
         for (int k = 0; k < len; k++) {

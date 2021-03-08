@@ -2,6 +2,7 @@ package com.gaolei.java_lib.fibonacci;
 
 /**
  * Description：求菲波那契数列的和
+ * 指的是这样一个数列：1、1、2、3、5、8、13、21、34、……在数学上，斐波纳契数列以如下被以递推的方法定义：F(1)=1，F(2)=1, F(n)=F(n-1)+F(n-2)(n>=3，n∈N*)
  */
 public class FibonacciDemo {
     public static void main(String[] args) {
@@ -17,7 +18,7 @@ public class FibonacciDemo {
 
     //第n项值
     private static int fibo(int n) {
-        if (n <= 3) {
+        if (n < 3) {
             return n;
         } else {
             return fibo(n - 1) + fibo(n - 2);

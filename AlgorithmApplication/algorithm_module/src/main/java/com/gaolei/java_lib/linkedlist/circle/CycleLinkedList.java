@@ -1,5 +1,7 @@
 package com.gaolei.java_lib.linkedlist.circle;
 
+import com.gaolei.java_lib.linkedlist.LinkedNode;
+
 /**
  * Description: 判断单向链表是否有环
  */
@@ -11,9 +13,9 @@ public class CycleLinkedList {
      * @return
      */
 
-    public static boolean isCycle(Node head) {
-        Node slow = head;
-        Node fast = head;
+    public static boolean isCycle(LinkedNode head) {
+        LinkedNode slow = head;
+        LinkedNode fast = head;
         while (fast != null && fast.next != null) {
             slow = slow.next;
             fast = fast.next.next;
@@ -28,12 +30,12 @@ public class CycleLinkedList {
      * 如果链表有环，如何求出环的长度
      */
 
-    public static int getCycleLength(Node head) {
+    public static int getCycleLength(LinkedNode head) {
         if (head == null) {
             return 0;
         }
-        Node fast = head;
-        Node slow = head;
+        LinkedNode fast = head;
+        LinkedNode slow = head;
         while (fast != null && fast.next != null) {
             fast = fast.next.next;
             slow = slow.next;
@@ -59,12 +61,12 @@ public class CycleLinkedList {
      * 如果链表有环，求出入环节点
      */
 
-    public static int getCycleNode(Node head) {
+    public static int getCycleNode(LinkedNode head) {
         if (head == null) {
             return 0;
         }
-        Node fast = head;
-        Node slow = head;
+        LinkedNode fast = head;
+        LinkedNode slow = head;
         while (fast != null && fast.next != null) {
             fast = fast.next.next;
             slow = slow.next;
@@ -76,7 +78,7 @@ public class CycleLinkedList {
                     fast = fast.next;
                     slow = slow.next;
                 }
-                return slow.data;
+                return slow.val;
 
             }
         }
@@ -84,33 +86,22 @@ public class CycleLinkedList {
 
     }
 
-    /**
-     * 链表节点
-     */
-    private static class Node {
-        int data;
-        Node next;
-
-        Node(int data) {
-            this.data = data;
-        }
-    }
 
     public static void main(String[] args) {
-        Node node1 = new Node(5);
-        Node node2 = new Node(3);
-        Node node3 = new Node(7);
-        Node node4 = new Node(2);
-        Node node5 = new Node(6);
+        LinkedNode node1 = new LinkedNode(5);
+        LinkedNode node2 = new LinkedNode(3);
+        LinkedNode node3 = new LinkedNode(7);
+        LinkedNode node4 = new LinkedNode(2);
+        LinkedNode node5 = new LinkedNode(6);
         node1.next = node2;
         node2.next = node3;
         node3.next = node4;
         node4.next = node5;
         node5.next = node3;
 
-        System.out.println("isCycle: "+isCycle(node1));
-        System.out.println("getCycleLength: "+getCycleLength(node1));
-        System.out.println("getCycleNode: "+ getCycleNode(node1));
+        System.out.println("isCycle: " + isCycle(node1));
+        System.out.println("getCycleLength: " + getCycleLength(node1));
+        System.out.println("getCycleNode: " + getCycleNode(node1));
     }
 }
 
