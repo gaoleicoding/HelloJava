@@ -1,7 +1,7 @@
-package com.gaolei.java_lib.linkedlist_num_add;
+package com.gaolei.java_lib.linkedlist;
 
 // 定义一个单链表
-class Node {
+public class Node {
 
     public Node(int val) {
         this.val = val;

@@ -1,7 +1,9 @@
-package com.gaolei.java_lib.linkedlist_num_add;
+package com.gaolei.java_lib.linkedlist.num_add;
+
+import com.gaolei.java_lib.linkedlist.Node;
 
 /**
- * Description：找出出现次数超过一半的数
+ * Description：两个链表的数子相加
  */
 public class LinkedListNumAdd {
 

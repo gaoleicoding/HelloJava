@@ -1,7 +1,7 @@
-package com.gaolei.java_lib.tree_traversal;
+package com.gaolei.java_lib.tree.traversal;
 
 /**
- * Description：二叉树遍历
+ * Description：二叉树遍历原则：前序根左右，中序左根右，后序左右根
  */
 
 public class TreeTraversal {
@@ -69,11 +69,12 @@ public class TreeTraversal {
     }
 
     /**
-     * 中序遍历
+     * 中序遍历（输出结果是有序的）
      *
      * @param node
      */
     public void inOrder(Node node) {
+
         if (node != null) {
             inOrder(node.left);
             System.out.println(node.data);
@@ -100,8 +101,12 @@ public class TreeTraversal {
         for (int i = 0; i < a.length; i++) {
             bTree.buildTree(bTree.root, a[i]);
         }
+
+        System.out.println("preOrder--------");
         bTree.preOrder(bTree.root);
+        System.out.println("inOrder--------");
         bTree.inOrder(bTree.root);
+        System.out.println("postOrder--------");
         bTree.postOrder(bTree.root);
     }
 

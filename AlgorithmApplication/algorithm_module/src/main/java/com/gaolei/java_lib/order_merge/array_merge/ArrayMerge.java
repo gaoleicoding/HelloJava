@@ -1,13 +1,13 @@
-package com.gaolei.java_lib.order_array_merge;
+package com.gaolei.java_lib.order_merge.array_merge;
 
 import java.util.ArrayList;
 
 /**
- * Description：找出出现次数超过一半的数
+ * Description：两个有序数组合并为一个有序数组
  */
-public class OrderArrayMerge {
+public class ArrayMerge {
 
-    public OrderArrayMerge() {
+    public ArrayMerge() {
 
     }
 

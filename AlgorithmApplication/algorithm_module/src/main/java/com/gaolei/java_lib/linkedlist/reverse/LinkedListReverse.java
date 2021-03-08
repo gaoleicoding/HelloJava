@@ -1,5 +1,6 @@
-package com.gaolei.java_lib.linkedlist_reverse;
+package com.gaolei.java_lib.linkedlist.reverse;
 
+import com.gaolei.java_lib.linkedlist.Node;
 
 /**
  * Description：两种方式实现单链表的反转(递归、普通)
@@ -16,9 +17,9 @@ public class LinkedListReverse {
         for (int i = 1; i < 10; i++) {
             tmp = new Node(i);
             if (1 == i) {
-                head.setNextNode(tmp);
+                head.setNext(tmp);
             } else {
-                cur.setNextNode(tmp);
+                cur.setNext(tmp);
             }
             cur = tmp;
         }
@@ -27,7 +28,7 @@ public class LinkedListReverse {
         while (h != null) {
             System.out.print(h.getVal() + " ");
 
-            h = h.getNextNode();
+            h = h.getNext();
         }
         System.out.println("\n*******************");
         //调用反转方法
@@ -36,7 +37,7 @@ public class LinkedListReverse {
         //打印反转后的结果
         while (head != null) {
             System.out.print(head.getVal() + " ");
-            head = head.getNextNode();
+            head = head.getNext();
         }
     }
 
@@ -46,13 +47,13 @@ public class LinkedListReverse {
     //最终传递一个指向最后一个节点的变量
     public static Node reverse1(Node head) {
         //当为空或者本节点为末尾节点的时候
-        if (head == null || head.getNextNode() == null)
+        if (head == null || head.getNext() == null)
             return head;
-        Node reversedHead = reverse1(head.getNextNode());
+        Node reversedHead = reverse1(head.getNext());
         //获取先前的下一个节点，让该节点指向自身
-        head.getNextNode().setNextNode(head);
+        head.getNext().setNext(head);
         //破坏以前自己指向下一个节点
-        head.setNextNode(null);
+        head.setNext(null);
         //层层传递给最上面的
         return reversedHead;
     }
@@ -65,22 +66,22 @@ public class LinkedListReverse {
             return head;
         }
         Node pre = head;
-        Node cur = head.getNextNode();
+        Node cur = head.getNext();
         Node next;
 
         while (cur != null) {
             System.out.println("pre.getRecord() " + pre.getVal());
             //断之前先找到原始的下一个节点
-            next = cur.getNextNode();
+            next = cur.getNext();
             //逆序连接
-            cur.setNextNode(pre);
+            cur.setNext(pre);
             //两个节点同时滑动
             pre = cur;
             cur = next;
 
         }
         //将原链表的头节点的下一个节点置为null，再将反转后的头节点赋给head
-        head.setNextNode(null);
+        head.setNext(null);
         head = pre;
         return head;
     }

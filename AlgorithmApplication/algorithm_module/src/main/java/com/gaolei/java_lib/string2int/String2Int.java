@@ -14,6 +14,10 @@ public class String2Int {
     }
 
     public static int stringToInt(String str) {
+        if (str == null || str.length() == 0) {
+            System.out.println("此字符串为空");
+            return -1;
+        }
         int length = str.length();
         int sum = 0, sum1 = 0;
         if (isInteger(str)) {
