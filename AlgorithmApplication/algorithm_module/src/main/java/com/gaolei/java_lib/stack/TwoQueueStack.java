@@ -36,7 +36,6 @@ public class TwoQueueStack {
 
         if (queue2.isEmpty()) {
             queue1.add(node);
-            return;
         }
 
     }
