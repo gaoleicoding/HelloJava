@@ -1,4 +1,4 @@
-package com.gaolei.java_lib.linkedlist.reverse;
+package com.gaolei.java_lib.linkedlist;
 
 import com.gaolei.java_lib.linkedlist.LinkedNode;
 

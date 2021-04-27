@@ -1,4 +1,4 @@
-package com.gaolei.java_lib.find_overhalf_num;
+package com.gaolei.java_lib.array;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -6,7 +6,7 @@ import java.util.Map;
 /**
  * Description：找出出现次数超过一半的数
  */
-public class FindOverhalfNum {
+public class ArrayFindOverhalfNum {
 
 
     public static void main(String[] args) {

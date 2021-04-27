@@ -1,9 +1,9 @@
-package com.gaolei.java_lib.array_GCD_LCM;
+package com.gaolei.java_lib.array;
 
 /**
  * Description：求最小公倍数和最大公约数
  */
-public class GCDLCM {
+public class ArrayGCDLCM {
     public static void main(String[] args) {
         int m = 16, n = 24;
 //		Scanner in = new Scanner(System.in);

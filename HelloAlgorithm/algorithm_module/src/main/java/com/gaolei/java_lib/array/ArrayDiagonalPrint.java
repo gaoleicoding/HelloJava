@@ -1,4 +1,4 @@
-package com.gaolei.java_lib.array_diagonal_print;
+package com.gaolei.java_lib.array;
 
 /**
  * Description：二维数组（N*N），沿对角线方向，从右上角打印到左下角

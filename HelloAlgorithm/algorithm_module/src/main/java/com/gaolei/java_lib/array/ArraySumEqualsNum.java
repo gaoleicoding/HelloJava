@@ -1,4 +1,4 @@
-package com.gaolei.java_lib.array_sum_equals;
+package com.gaolei.java_lib.array;
 
 import java.util.Arrays;
 import java.util.HashMap;
@@ -7,7 +7,7 @@ import java.util.Map;
 /**
  * Description：求数组中是否存在两个数的和等于某个值
  */
-public class SumEqualsNum {
+public class ArraySumEqualsNum {
     public static void main(String[] args) {
 
         int array[] = {3, 0, 6, 1, 8, 2};

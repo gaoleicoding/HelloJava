@@ -1,4 +1,4 @@
-package com.gaolei.java_lib.array_print_cw;
+package com.gaolei.java_lib.array;
 
 public class ArrayPrintCW {
     /**

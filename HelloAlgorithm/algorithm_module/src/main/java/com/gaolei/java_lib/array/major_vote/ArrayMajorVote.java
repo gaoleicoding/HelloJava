@@ -1,14 +1,12 @@
-package com.gaolei.java_lib.major_vote;
+package com.gaolei.java_lib.array.major_vote;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 /**
  * Description：摩尔投票算法
  */
-public class BMMajorVote {
+public class ArrayMajorVote {
 
     public static void main(String[] args) {
 

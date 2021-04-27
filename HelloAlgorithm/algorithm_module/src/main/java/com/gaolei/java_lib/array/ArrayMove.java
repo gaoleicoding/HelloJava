@@ -1,4 +1,4 @@
-package com.gaolei.java_lib.array_move_from_k;
+package com.gaolei.java_lib.array;
 
 import java.util.Arrays;
 

@@ -1,11 +1,11 @@
-package com.gaolei.java_lib.find_kth_num;
+package com.gaolei.java_lib.linkedlist;
 
 import com.gaolei.java_lib.linkedlist.LinkedNode;
 
 /**
  * Description：找出一个单链表中倒数第K个节点
  */
-public class FindKthNum {
+public class LinkedListFindKthNum {
     public static void main(String[] args) {
         LinkedNode head = makeList1();
         LinkedNode k = findK(head, 1);

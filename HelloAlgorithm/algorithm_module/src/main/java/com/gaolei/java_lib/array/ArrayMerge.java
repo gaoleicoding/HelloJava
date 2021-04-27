@@ -1,4 +1,4 @@
-package com.gaolei.java_lib.order_merge.array_merge;
+package com.gaolei.java_lib.array;
 
 import java.util.ArrayList;
 

@@ -1,4 +1,4 @@
-package com.gaolei.java_lib.array_order;
+package com.gaolei.java_lib.array;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -19,7 +19,7 @@ import java.util.Random;
  *当数组大小7 <size <= 40时，取首，中，末三个元素中间大小的元素作为划分元。
  *当数组大小> 40时，从待排数组中较均匀的选择9个元素，选出一个中中做做为分分元。
  * */
-public class Order {
+public class ArrayOrder {
 
     public static void main(String[] args) {
         Random random = new Random();

@@ -1,6 +1,6 @@
-package com.gaolei.java_lib.array_search;
+package com.gaolei.java_lib.array;
 
-public class Search {
+public class ArraySearch {
 
     //顺序查找
     int SequenceSearch(int a[], int value, int n)
