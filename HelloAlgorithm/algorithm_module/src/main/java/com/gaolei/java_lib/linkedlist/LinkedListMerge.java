@@ -1,7 +1,5 @@
 package com.gaolei.java_lib.linkedlist;
 
-import com.gaolei.java_lib.linkedlist.LinkedNode;
-
 /**
  * Description：两个有序数组合并为一个有序数组
  */

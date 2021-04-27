@@ -1,7 +1,5 @@
 package com.gaolei.java_lib.linkedlist;
 
-import com.gaolei.java_lib.linkedlist.LinkedNode;
-
 /**
  * Description：两种方式实现单链表的反转(递归、普通)
  */
@@ -9,20 +7,7 @@ public class LinkedListReverse {
 
     public static void main(String[] args) {
         //带有头结点
-        LinkedNode head = new LinkedNode(0);
-        LinkedNode tmp = null;  // 保存临时变量
-        LinkedNode cur = null;  // 始终指向末尾节点
-        //构造一个长度为10的链表，保存头节点对象head
-        //利用尾插入法
-        for (int i = 1; i < 10; i++) {
-            tmp = new LinkedNode(i);
-            if (1 == i) {
-                head.setNext(tmp);
-            } else {
-                cur.setNext(tmp);
-            }
-            cur = tmp;
-        }
+        LinkedNode head = getLinkedNode();
         //打印反转前的链表
         LinkedNode h = head;
         while (h != null) {
@@ -39,6 +24,24 @@ public class LinkedListReverse {
             System.out.print(head.getVal() + " ");
             head = head.getNext();
         }
+    }
+
+    private static LinkedNode getLinkedNode() {
+        LinkedNode head = new LinkedNode(0);
+        LinkedNode tmp = null;  // 保存临时变量
+        LinkedNode cur = null;  // 始终指向末尾节点
+        //构造一个长度为10的链表，保存头节点对象head
+        //利用尾插入法
+        for (int i = 1; i < 10; i++) {
+            tmp = new LinkedNode(i);
+            if (1 == i) {
+                head.setNext(tmp);
+            } else {
+                cur.setNext(tmp);
+            }
+            cur = tmp;
+        }
+        return head;
     }
 
     /**

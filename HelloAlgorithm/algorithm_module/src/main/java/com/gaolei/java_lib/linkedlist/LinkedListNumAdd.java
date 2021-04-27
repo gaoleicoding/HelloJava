@@ -1,8 +1,6 @@
 package com.gaolei.java_lib.linkedlist;
 
 
-import com.gaolei.java_lib.linkedlist.LinkedNode;
-
 /**
  * Description：两个链表的数子相加
  */

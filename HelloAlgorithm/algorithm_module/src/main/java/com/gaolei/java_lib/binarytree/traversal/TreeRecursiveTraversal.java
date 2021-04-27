@@ -6,26 +6,16 @@ import com.gaolei.java_lib.binarytree.BinaryTreeNode;
  * Description：二叉树遍历原则：前序根左右，中序左根右，后序左右根
  */
 
-public class TreeTraversal {
+public class TreeRecursiveTraversal {
 
     private BinaryTreeNode root;
 
-    /**
-     * 内部节点类
-     *
-     * @author yhh
-     */
-
-
-    public TreeTraversal() {
+    public TreeRecursiveTraversal() {
         root = null;
     }
 
     /**
      * 递归创建二叉树
-     *
-     * @param node
-     * @param data
      */
     public void buildTree(BinaryTreeNode node, int data) {
         if (root == null) {
@@ -49,8 +39,6 @@ public class TreeTraversal {
 
     /**
      * 前序遍历
-     *
-     * @param node
      */
     public void preOrder(BinaryTreeNode node) {
         if (node != null) {
@@ -62,8 +50,6 @@ public class TreeTraversal {
 
     /**
      * 中序遍历（输出结果是有序的）
-     *
-     * @param node
      */
     public void inOrder(BinaryTreeNode node) {
 
@@ -76,8 +62,6 @@ public class TreeTraversal {
 
     /**
      * 后序遍历
-     *
-     * @param node
      */
     public void postOrder(BinaryTreeNode node) {
         if (node != null) {
@@ -89,16 +73,16 @@ public class TreeTraversal {
 
     public static void main(String[] args) {
         int[] a = {2, 4, 12, 45, 21, 6, 111};
-        TreeTraversal bTree = new TreeTraversal();
-        for (int i = 0; i < a.length; i++) {
-            bTree.buildTree(bTree.root, a[i]);
+        TreeRecursiveTraversal bTree = new TreeRecursiveTraversal();
+        for (int value : a) {
+            bTree.buildTree(bTree.root, value);
         }
 
-        System.out.println("preOrder--------");
+        System.out.println("递归 preOrder--------");
         bTree.preOrder(bTree.root);
-        System.out.println("inOrder--------");
+        System.out.println("递归 inOrder--------");
         bTree.inOrder(bTree.root);
-        System.out.println("postOrder--------");
+        System.out.println("递归 postOrder--------");
         bTree.postOrder(bTree.root);
     }
 

@@ -1,7 +1,5 @@
 package com.gaolei.java_lib.linkedlist;
 
-import com.gaolei.java_lib.linkedlist.LinkedNode;
-
 /**
  * Description: 判断单向链表是否有环
  */

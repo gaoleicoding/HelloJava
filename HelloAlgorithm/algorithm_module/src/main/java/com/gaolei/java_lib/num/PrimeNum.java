@@ -1,4 +1,4 @@
-package com.gaolei.java_lib.prime_num;
+package com.gaolei.java_lib.num;
 
 public class PrimeNum {
     public static void main(String[] args) {

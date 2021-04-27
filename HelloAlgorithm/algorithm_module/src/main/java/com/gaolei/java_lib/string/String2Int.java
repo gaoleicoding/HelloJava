@@ -1,4 +1,4 @@
-package com.gaolei.java_lib.string2int;
+package com.gaolei.java_lib.string;
 
 import java.util.regex.Pattern;
 
