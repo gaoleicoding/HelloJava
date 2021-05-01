@@ -25,8 +25,8 @@ public class ArraySumEqualsNum {
         int index = 0;
 
         // 将每个数字和其下标放进map中
-        for (Integer curr : arr) {
-            hashMap.put(curr, index++);
+        for (Integer cur : arr) {
+            hashMap.put(cur, index++);
         }
         // 遍历HashMap并判断
         for (Map.Entry<Integer, Integer> entry : hashMap.entrySet()) {

@@ -1,4 +1,4 @@
-package com.gaolei.java_lib.fibonacci;
+package com.gaolei.java_lib.num;
 
 /**
  * Description：求菲波那契数列的和
