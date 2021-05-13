@@ -78,15 +78,13 @@ public class LinkedListReverse {
             next = cur.getNext();
             //逆序连接
             cur.setNext(pre);
-            //两个节点同时滑动
             pre = cur;
             cur = next;
 
         }
         //将原链表的头节点的下一个节点置为null，再将反转后的头节点赋给head
         head.setNext(null);
-        head = pre;
-        return head;
+        return pre;
     }
 
 } 
