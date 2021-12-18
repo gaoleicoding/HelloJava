@@ -1,1 +1,1 @@
-include ':app', ':algorithm_module'
+include ':app', ':algorithm_lib', ':java_lib'
