@@ -1,2 +1,2 @@
-# AlgorithmProject
-有关一些算法的练习
+# HelloJava
+Java 相关知识
