@@ -1,4 +1,4 @@
-package com.gl.algorithmapplication;
+package com.gl.test;
 
 import android.os.Bundle;
 
